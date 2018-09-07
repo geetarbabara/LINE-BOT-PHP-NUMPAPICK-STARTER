@@ -5,7 +5,7 @@
 const char* ssid     = "Park"; //change this to your SSID
 const char* password = "12345678"; //change this to your PASSWORD
 
-const char* host = "http://people-on-earth-8266.herokuapp.com/bot.php";//change this to your linebot server ex.http://people-on-earth-8266.herokuapp.com/bot.php
+const char* host = "http://control-8266.herokuapp.com/bot.php";//change this to your linebot server ex.http://people-on-earth-8266.herokuapp.com/bot.php
 #define APPID   "M1Kl7hMZi5qoLOT:QM57794ulYYwt5Ddj6wQVqWJ1"     //change this to your APPID
 #define KEY     "ulDQ0JUZqdYvppj"     //change this to your KEY
 #define SECRET  "Jq6zH7hZb6AQn7c6WejXYqzZz"     //change this to your SECRET
