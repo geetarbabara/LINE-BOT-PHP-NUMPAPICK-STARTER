@@ -10,7 +10,7 @@ const char* host = "http://control-8266.herokuapp.com/bot.php";//change this to 
 #define KEY     "ulDQ0JUZqdYvppj"     //change this to your KEY
 #define SECRET  "Jq6zH7hZb6AQn7c6WejXYqzZz"     //change this to your SECRET
 
-#define ALIAS   "esp" //set name of drvice
+#define ALIAS   "NodeMCU1" //set name of drvice
 #define TargetWeb "switch" //set target name of web
 
 WiFiClient client;
