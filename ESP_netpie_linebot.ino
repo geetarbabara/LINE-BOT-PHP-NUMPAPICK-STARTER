@@ -2,13 +2,13 @@
 #include <MicroGear.h>
 #include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
-const char* ssid     = "Park"; //change this to your SSID
-const char* password = "12345678"; //change this to your PASSWORD
+const char* ssid     = "your SSID"; //change this to your SSID
+const char* password = "your PASSWORD"; //change this to your PASSWORD
 
-const char* host = "http://control-8266.herokuapp.com/bot.php";//change this to your linebot server ex.http://people-on-earth-8266.herokuapp.com/bot.php
-#define APPID   "M1Kl7hMZi5qoLOT:QM57794ulYYwt5Ddj6wQVqWJ1"     //change this to your APPID
-#define KEY     "ulDQ0JUZqdYvppj"     //change this to your KEY
-#define SECRET  "Jq6zH7hZb6AQn7c6WejXYqzZz"     //change this to your SECRET
+const char* host = "your linebot server";//change this to your linebot server ex.http://numpapick-linebot.herokuapp.com/bot.php
+#define APPID   "your APPID"     //change this to your APPID
+#define KEY     "your KEY"     //change this to your KEY
+#define SECRET  "your SECRET"     //change this to your SECRET
 
 #define ALIAS   "NodeMCU1" //set name of drvice
 #define TargetWeb "switch" //set target name of web
@@ -23,14 +23,14 @@ void onMsghandler(char *topic, uint8_t* msg, unsigned int msglen) { //
     msg[msglen] = '\0';
 Serial.println((char *)msg);
     if(*(char *)msg == '1'){
-        digitalWrite(2, LOW);   // LED on
-        microgear.chat(TargetWeb,"1");
-        send_data("ESP_LED_ON");
+        digitalWrite(LED_BUILTIN, LOW);   // LED on
+        //microgear.chat(TargetWeb,"1");
+        //send_data("ESP_LED_ON");
         send_json("ESP LED ON");
     }else{
-        digitalWrite(2, HIGH);  // LED off
-      microgear.chat(TargetWeb,"0");
-      send_data("ESP_LED_OFF");
+        digitalWrite(LED_BUILTIN, HIGH);  // LED off
+      //microgear.chat(TargetWeb,"0");
+      //send_data("ESP_LED_OFF");
       send_json("ESP LED OFF");
     }
 }
@@ -48,7 +48,7 @@ void setup() {
     Serial.begin(115200);
     Serial.println("Starting...");
 
-    pinMode(2, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
   
     if (WiFi.begin(ssid, password)) {
         while (WiFi.status() != WL_CONNECTED) {
